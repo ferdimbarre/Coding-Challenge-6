@@ -26,3 +26,9 @@ function calculateTotalHours (findEmployee, employeeName) {
 let totalHoursWorked = findEmployee.shifts.reduce((total, shift) => { return shift.hours + total}, 0)
 return totalHoursWorked
 }// calculates total hours an employee works 
+
+// Create a Function to List Employees with Free Day
+function listAvailableEmployees (employees, dayInput) {
+let availableThisDay = employees.filter(employee => !employee.shifts.some(shift => shift.day === dayInput));
+if (availableThisDay.length) {availableThisDay.forEach(employee =>console.log(employee.name));
+}} //availableThisDay filters employees that are free and foreach logs each name
