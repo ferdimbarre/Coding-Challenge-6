@@ -6,5 +6,11 @@ const employees = [
     { name: 'Emily', shifts: [{ day: 'Friday', hours: 8 }] }
 ];
 
+//Create a Function to Display Employee Shift Details
+function displayEmployeeShifts (employees, employeeName) { //accepts the employee object and the input employeeName
+    let findEmployee = employees.find(employees => employees.name === employeeName) // finds the employee with the shit being logged
+    if (findEmployee) {findEmployee.shifts.forEach (({day, hours})=> { console.log(`Employee ${findEmployee.name} is currently working on ${day} for ${hours} hours`)}) //logs the shift 
+    return findEmployee //example output: Employee David is currently working on Monday for 8 hours
+    }};
 
 
