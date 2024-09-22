@@ -13,4 +13,11 @@ function displayEmployeeShifts (employees, employeeName) { //accepts the employe
     return findEmployee //example output: Employee David is currently working on Monday for 8 hours
     }};
 
+// Create a Function to Assign a New Shift
+function assignShift (findEmployee, employeeName) { //accepts findEmplyee which already finds wmployee by name and input employeeName
+let hasShiftFriday = findEmployee.shifts.some(shift => shift.day === "Friday") //checks if employee already works friday
+if (hasShiftFriday) {console.log(`Error: this employee is already working today`) //error message if employee unavailable
+} else {findEmployee.shifts.push( { day: "Friday", hours: 3 });
+console.log(findEmployee); //if employee available, log shift on friday
+}};
 
