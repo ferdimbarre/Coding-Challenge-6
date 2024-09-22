@@ -21,3 +21,8 @@ if (hasShiftFriday) {console.log(`Error: this employee is already working today`
 console.log(findEmployee); //if employee available, log shift on friday
 }};
 
+// Create a Function to Calculate Total Hours Worked
+function calculateTotalHours (findEmployee, employeeName) {
+let totalHoursWorked = findEmployee.shifts.reduce((total, shift) => { return shift.hours + total}, 0)
+return totalHoursWorked
+}// calculates total hours an employee works 
